@@ -44,7 +44,6 @@ void movimientoMouse(int x, int y);
 void orbita();
 void mouse(int boton, int estado, int x, int y);
 void agregarTextura();
-GLuint LoadTexture(const char * filename);
 
 void initPlanetas()
 {
@@ -58,7 +57,7 @@ void initPlanetas()
     */
     
     planetas->Add(new Planeta("Sol", 0, 0, 0, "sun.jpg", 109/30, 1.0));
-    planetas->Add(new Planeta("Tierra", 30, 30, 1 , "Tierra.bmp", 1, 1.0));
+    planetas->Add(new Planeta("Tierra", 30, 30, 1 , "texturas/Tierra.jpg", 1, 1.0));
     planetas->Add(new Planeta("Luna", 8, 8, 0.07, "Luna.bmp", 0.18, 15.0, planetas->Get(1)));
     
     planetaHover = planetas->Get(0);
@@ -140,7 +139,7 @@ void botones(unsigned char key, int A, int B)
             break;
         case '1': irAPlaneta(1);
             break;
-        case '-': multiplicarTiempo /= multiplicarTiempo < 0.01 ? 1 : 2;
+        case '-': multiplicarTiempo /= multiplicarTiempo < 0.001 ? 1 : 2;
             break;
         case '+': multiplicarTiempo *= multiplicarTiempo > 10 ? 1 : 2;
             break;

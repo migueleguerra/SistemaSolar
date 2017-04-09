@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include <string>
+#include "texture.h"
 
 using namespace std;
 
@@ -36,19 +37,26 @@ public:
     double pY;
     double pZ;
     
-    char* direccionTextura;
+    string texturePath;
     GLuint TexturePath;
     GLuint textura;
     Planeta *sateliteDe;
     
-    Planeta();
+    //Planeta();
     
     Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital,
-            char* direccionTextura, double tamano, double inclinacion, Planeta *sateliteDe = NULL);
+            const std::string texturePath, double tamano, double inclinacion, Planeta *sateliteDe = NULL);
     
+    virtual ~Planeta();
+
     void Orbita(double grado, double escalaRotacionEje);
     
     void Dibujar();
+
+private:
+    Planeta(const Planeta& planeta) {}
+    void operator=(const Planeta& planeta) {}
+    
 };
 
 

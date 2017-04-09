@@ -9,26 +9,32 @@
 #include <iostream>
 #include <math.h>
 #include <GLUT/glut.h>
-#include "Planeta.h"
 
-Planeta::Planeta()
-{
-    ubicacionActualSistema = 0;
-}
+#include "Planeta.h"
+#include "texture.h"
+
+// Planeta::Planeta()
+// {
+//     ubicacionActualSistema = 0;
+// }
 
 Planeta::Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital,
-                 char* direccionTextura, double tamano, double inclinacion, Planeta *sateliteDe)
+                 string texturePath, double tamano, double inclinacion, Planeta *sateliteDe)
 {
     this->nombre = nombre;
     this->aphelion = aphelion;
     this->ubicacionActualEje = 0;
     this->perihelion = perihelion;
     this->periodoOrbital = periodoOrbital;
-    this->direccionTextura = direccionTextura;
+    this->texturePath = texturePath;
     this->tamano = tamano;
     this->sateliteDe = sateliteDe;
     this->inclinacionZ = inclinacion;
     this->inclinacionY = rand() % 180;
+}
+
+Planeta::~Planeta() {
+
 }
 
 void Planeta::Orbita(double grado, double escalaRotacionEje)
@@ -102,10 +108,12 @@ void Planeta::Dibujar()
     glTranslated(pX, pY, pZ);
     
     //se crea el planeta
+    Texture texture(texturePath);
     GLUquadric *qobj = gluNewQuadric();
     gluQuadricTexture(qobj, GL_TRUE);
     glEnable(GL_TEXTURE_2D);
-    glBindTexture(GL_TEXTURE_2D, textura);
+    texture.Bind();
+    //glBindTexture(GL_TEXTURE_2D, textura);
     glRotated(270.0f, 1.0f, 0.0f, 0.0f);
     
     glPushMatrix();
