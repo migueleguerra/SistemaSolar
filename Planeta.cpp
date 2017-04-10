@@ -12,6 +12,7 @@
 
 #include "Planeta.h"
 #include "texture.h"
+#include "drawCircle.h"
 
 // Planeta::Planeta()
 // {
@@ -96,12 +97,19 @@ void Planeta::Dibujar()
     
     //se crea la orbita
     glPushMatrix();
-    if(sateliteDe == NULL)
+    if(sateliteDe == NULL && nombre != "Sol")
     {
         glTranslated(-(trasladoSistemaX + trasladoSistemaZ) / 3, 0, 0);
         glScaled(1, 1, trasladoSistemaZ / trasladoSistemaX);
         glRotated(90, 1.0, 0.0, 0.0);
-        glutSolidTorus(0.01, trasladoSistemaX, 4, trasladoSistemaX * (trasladoSistemaZ < 50 ? 30 : 15));
+
+        // Call only once for all remaining points
+        glDisable(GL_LIGHTING);
+        glColor3f(1.0f, 1.0f, 1.0f);
+        drawCircle(trasladoSistemaX);
+        glEnable(GL_LIGHTING);
+
+        //glutSolidTorus(0.001, trasladoSistemaX, 4, trasladoSistemaX * (trasladoSistemaZ < 50 ? 30 : 15));
     }
     glPopMatrix();
     
