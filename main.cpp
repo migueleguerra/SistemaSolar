@@ -202,7 +202,7 @@ void agregarTextura()
 
 void initSistema()
 {
-    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH | GLUT_MULTISAMPLE);
     glutInitWindowSize(800, 800);
     glutCreateWindow("Proyecto");
     
@@ -221,10 +221,11 @@ void initSistema()
     glEnable(GL_LIGHTING);
     glEnable(GL_LIGHT0);
     glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_MULTISAMPLE);
     glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
     glShadeModel(GL_SMOOTH);
     glClearColor(0.0, 0.0, 0.0, 0.0);
-    
+
     glutIdleFunc(orbita);
     glutMainLoop();
     
