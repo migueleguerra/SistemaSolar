@@ -20,6 +20,7 @@
 
 Planeta::Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital,
                  string texturePath, double tamano, double inclinacion, Planeta *sateliteDe)
+    : textura(new Texture(texturePath))
 {
     this->nombre = nombre;
     this->aphelion = aphelion;
@@ -34,7 +35,7 @@ Planeta::Planeta(string nombre, double aphelion, double perihelion, double perio
 }
 
 Planeta::~Planeta() {
-
+    delete textura;
 }
 
 void Planeta::Orbita(double grado, double escalaRotacionEje)
@@ -108,13 +109,12 @@ void Planeta::Dibujar()
     glTranslated(pX, pY, pZ);
     
     //se crea el planeta
-    Texture texture(texturePath);
     GLUquadric *qobj = gluNewQuadric();
     gluQuadricTexture(qobj, GL_TRUE);
     glEnable(GL_TEXTURE_2D);
-    texture.Bind();
     //glBindTexture(GL_TEXTURE_2D, textura);
     glRotated(270.0f, 1.0f, 0.0f, 0.0f);
+    textura->Bind();
     
     glPushMatrix();
     glRotated(ubicacionActualEje, 0, 0, 1);

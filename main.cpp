@@ -56,9 +56,10 @@ void initPlanetas()
     - *sateliteDe seria la luna y especificando a quien pertenece.
     */
     
-    planetas->Add(new Planeta("Sol", 0, 0, 0, "sun.jpg", 109/30, 1.0));
-    planetas->Add(new Planeta("Tierra", 30, 30, 1 , "texturas/Tierra.jpg", 1, 1.0));
-    planetas->Add(new Planeta("Luna", 8, 8, 0.07, "Luna.bmp", 0.18, 15.0, planetas->Get(1)));
+    planetas->Add(new Planeta("Sol", 0, 0, 0, "texturas/2k_sun.jpg", 109/30, 1.0));
+    planetas->Add(new Planeta("Marte", 15.19*5, 14.95*5, 1 , "texturas/Tierra.jpg", 1, 1.0));
+    planetas->Add(new Planeta("Tierra", 20.67*5, 24.92*5, 1.8821 , "texturas/2k_mars.jpg", .53, 1.0));
+    planetas->Add(new Planeta("Luna", 8, 8, 0.07, "texturas/2k_moon.jpg", 0.18, 15.0, planetas->Get(1)));
     
     planetaHover = planetas->Get(0);
 }
@@ -205,8 +206,10 @@ void initSistema()
     glutInitWindowSize(800, 800);
     glutCreateWindow("Proyecto");
     
+    initPlanetas();
+    menu(0);
+    // agregarTextura();
     glutReshapeFunc(rWin);
-    agregarTextura();
     glutDisplayFunc(dibujar);
     glutKeyboardFunc(botones);
     glutMotionFunc(movimientoMouse);
@@ -230,8 +233,6 @@ void initSistema()
 
 int main(int argc, char **argv)
 {
-    initPlanetas();
-    menu(0);
     glutInit(&argc, argv);
     initSistema();
     return 0;

@@ -39,7 +39,7 @@ public:
     
     string texturePath;
     GLuint TexturePath;
-    GLuint textura;
+    Texture *textura;
     Planeta *sateliteDe;
     
     //Planeta();
