@@ -105,8 +105,9 @@ void Planeta::Dibujar()
 
         // Call only once for all remaining points
         glDisable(GL_LIGHTING);
-        glColor3f(1.0f, 1.0f, 1.0f);
+        glColor3f(0.1f, 0.3f, 0.5f);
         drawCircle(trasladoSistemaX);
+        glColor3f(1.0f, 1.0f, 1.0f);
         glEnable(GL_LIGHTING);
 
         //glutSolidTorus(0.001, trasladoSistemaX, 4, trasladoSistemaX * (trasladoSistemaZ < 50 ? 30 : 15));
