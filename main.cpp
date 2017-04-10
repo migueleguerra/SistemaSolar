@@ -15,9 +15,11 @@
 #include <ctime>
 #include "List.h"
 #include "Planeta.h"
+#include "Universo.h"
 
 Planeta *planetaHover;
 List<Planeta*> *planetas;
+Universo *universo;
 
 GLuint estreallas;
 double multiplicarTiempo = 0.05;
@@ -118,6 +120,7 @@ void dibujar()
               planetaHover->pX, planetaHover->pY, planetaHover->pZ, 0.0, 1.0, 0.0);
     
     glPushMatrix();
+    universo->draw();
     for(int i = 0; i < planetas->Length(); i++)
         planetas->Get(i)->Dibujar();
     glPopMatrix();
@@ -216,6 +219,7 @@ void initSistema()
     
     initPlanetas();
     menu(0);
+    universo = new Universo("texturas/2k_stars+milky_way.jpg", 60);
     // agregarTextura();
     glutReshapeFunc(rWin);
     glutDisplayFunc(dibujar);

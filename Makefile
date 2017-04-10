@@ -18,7 +18,7 @@ DEBUG=-ggdb
 all: main
 
 main: main.cpp Planeta.cpp
-	$(CC) $(DEBUG) $(LIBS) stb_image.c main.cpp Planeta.cpp texture.cpp  -o solarSis
+	$(CC) $(DEBUG) $(LIBS) stb_image.c main.cpp Planeta.cpp Universo.cpp texture.cpp  -o solarSis
 
 
 
