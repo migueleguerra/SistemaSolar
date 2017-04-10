@@ -137,6 +137,7 @@ void irAPlaneta(int index)
 
 void botones(unsigned char key, int A, int B)
 {
+    int number = key - '0';
     switch(key)
     {
         case 'w': zoom--;
@@ -158,6 +159,9 @@ void botones(unsigned char key, int A, int B)
         case 27:  exit(0);
             break;
         default:  break;
+    }
+    if (number >= 0 && number < 5){
+        planetaHover = planetas->Get(number);
     }
 }
 
