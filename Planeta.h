@@ -25,6 +25,7 @@ public:
     double aphelion;
     double perihelion;
     double periodoOrbital;
+    double rotacion;
     double inclinacionZ;
     double inclinacionY;
     double tamano;
@@ -44,7 +45,7 @@ public:
     
     //Planeta();
     
-    Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital,
+    Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital, double periodoRotacion,
             const std::string texturePath, double tamano, double inclinacion, Planeta *sateliteDe = NULL);
     
     virtual ~Planeta();

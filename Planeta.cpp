@@ -19,8 +19,10 @@
 // }
 
 Planeta::Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital,
+                double periodoRotacion,
                  string texturePath, double tamano, double inclinacion, Planeta *sateliteDe)
-    : textura(new Texture(texturePath))
+    : textura(new Texture(texturePath)),
+      rotacion(periodoRotacion)
 {
     this->nombre = nombre;
     this->aphelion = aphelion;
@@ -40,7 +42,7 @@ Planeta::~Planeta() {
 
 void Planeta::Orbita(double grado, double escalaRotacionEje)
 {
-    ubicacionActualEje += grado * escalaRotacionEje;
+    ubicacionActualEje += grado * escalaRotacionEje / rotacion;
     ubicacionActualSistema += grado / (periodoOrbital == 0 ? 1 : periodoOrbital);
     
     ubicacionActualSistema = ubicacionActualSistema > 360 ? ubicacionActualSistema - 360 : ubicacionActualSistema;
