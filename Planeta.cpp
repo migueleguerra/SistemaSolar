@@ -49,7 +49,7 @@ void Planeta::Orbita(double grado, double escalaRotacionEje)
 
 void Planeta::Dibujar()
 {
-    GLfloat posicion[] = {0.0, 0.0, 0.0, 1.0};
+    GLfloat posicion[] = {-2.0, 0.0, 0.0, 1.0};
     GLfloat luzAmbiente[] = {0.3, 0.3, 0.3, 1.0};
     
     const double pi = 3.1416;
@@ -72,11 +72,14 @@ void Planeta::Dibujar()
     
     if(nombre == "Sol")
     {
-        glLightfv(GL_LIGHT0, GL_AMBIENT, luzAmbiente);
-        glLightfv(GL_LIGHT0, GL_AMBIENT, posicion);
+        glLightfv(GL_LIGHT0, GL_POSITION, posicion);
+        glLightfv(GL_LIGHT1, GL_AMBIENT, luzAmbiente);
     }
     else
     {
+        glEnable(GL_LIGHTING);
+        glEnable(GL_LIGHT0);
+        //glEnable(GL_LIGHT1);
         if(sateliteDe == NULL)
         {
             pX += -(trasladoSistemaX + trasladoSistemaZ) / 3;
@@ -124,9 +127,10 @@ void Planeta::Dibujar()
     glDisable(GL_TEXTURE_2D);
     gluDeleteQuadric(qobj);
     
-    if(nombre == "Sol")
+    if(nombre != "Sol")
     {
-        glEnable(GL_LIGHTING);
+        glDisable(GL_LIGHT0);
+        glDisable(GL_LIGHTING);
     }
     glPopMatrix();
     

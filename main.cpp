@@ -218,8 +218,7 @@ void initSistema()
     glEnable(GL_DEPTH_TEST);
     glFrontFace(GL_CCW);
     glEnable(GL_CULL_FACE);
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0);
+    // glEnable(GL_LIGHT0);
     glEnable(GL_COLOR_MATERIAL);
     glEnable(GL_MULTISAMPLE);
     glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
