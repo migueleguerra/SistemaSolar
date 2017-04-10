@@ -96,7 +96,7 @@ void Planeta::Dibujar()
         glTranslated(-(trasladoSistemaX + trasladoSistemaZ) / 3, 0, 0);
         glScaled(1, 1, trasladoSistemaZ / trasladoSistemaX);
         glRotated(90, 1.0, 0.0, 0.0);
-        glutSolidTorus(0.01, trasladoSistemaX, 4, trasladoSistemaX * (trasladoSistemaZ < 50 ? 15 : 5));
+        glutSolidTorus(0.01, trasladoSistemaX, 4, trasladoSistemaX * (trasladoSistemaZ < 50 ? 30 : 15));
     }
     glPopMatrix();
     
