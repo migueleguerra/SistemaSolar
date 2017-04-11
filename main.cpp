@@ -63,12 +63,21 @@ void initPlanetas()
     // mercurio 0.24
     // venus 0.0041
     // marte 1
-    
+    // https://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html
     planetas->Add(new Planeta("Sol", 0, 0, 0, 20,"texturas/2k_sun.jpg", 109/30, 1.0));
     planetas->Add(new Planeta("Mercurio", 7.0*scale, 4.6*scale, 0.24, 58.82, "texturas/2k_mercury.jpg", .38, 1.0));
     planetas->Add(new Planeta("Venus", 10.893*scale, 10.747*scale, 0.61, 243, "texturas/2k_venus_atmosphere.jpg", .815, 1.0));
     planetas->Add(new Planeta("Tierra", 15.19*scale, 14.95*scale, 4.15, 1, "texturas/Tierra.jpg", 1, 25.0));
     planetas->Add(new Planeta("Marte", 20.67*scale, 24.92*scale, 1.8821, 1, "texturas/2k_mars.jpg", .53, 23.0));
+
+    planetas->Add(new Planeta("Jupiter", 81.6*scale, 74.05*scale, 11.86, 0.41, "texturas/2k_jupiter.jpg", 11, 1));
+    planetas->Add(new Planeta("Saturno", 135.36*scale, 151.3*scale, 29.5, 0.445, "texturas/2k_saturn.jpg", 9.13, 23.0));
+    planetas->Add(new Planeta("Urano", 300.6*scale, 273.5*scale, 84, -0.720, "texturas/2k_uranus.jpg", 4, 98));
+    planetas->Add(new Planeta("Neptuno", 453.7*scale, 445.9*scale, 164.7, 1, "texturas/2k_neptune.jpg", 3.88, 1));
+    // planeta enano
+    planetas->Add(new Planeta("Plutón", 730*scale, 440*scale, 247.68, 6.41, "texturas/2k_eris_fictional.jpg", 0.186, 120));
+
+    // Lunas
     planetas->Add(new Planeta("Luna", 8, 8, 0.07, 2.5,"texturas/2k_moon.jpg", 0.18, 15.0, planetas->Get(3)));
     
     planetaHover = planetas->Get(0);
@@ -160,7 +169,7 @@ void botones(unsigned char key, int A, int B)
             break;
         default:  break;
     }
-    if (number >= 0 && number < 5){
+    if (number >= 0 && number < 10){
         planetaHover = planetas->Get(number);
     }
 }
@@ -223,7 +232,7 @@ void initSistema()
     
     initPlanetas();
     menu(0);
-    universo = new Universo("texturas/2k_stars+milky_way.jpg", 60);
+    universo = new Universo("texturas/2k_stars+milky_way.jpg", 610);
     // agregarTextura();
     glutReshapeFunc(rWin);
     glutDisplayFunc(dibujar);
