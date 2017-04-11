@@ -21,24 +21,26 @@
 
 Planeta::Planeta(string nombre, double aphelion, double perihelion, double periodoOrbital,
                 double periodoRotacion,
-                 string texturePath, double tamano, double inclinacion, Planeta *sateliteDe)
-    : textura(new Texture(texturePath)),
-      rotacion(periodoRotacion)
+                 string texturePath, double tamano, double inclinacion, Planeta *sateliteDe):
+    textura(new Texture(texturePath)),
+    rotacion(periodoRotacion),
+    nombre(nombre),
+    aphelion(aphelion),
+    ubicacionActualEje(0),
+    perihelion(perihelion),
+    periodoOrbital(periodoOrbital),
+    texturePath(texturePath),
+    tamano(tamano),
+    sateliteDe(sateliteDe),
+    inclinacionZ(inclinacion),
+    inclinacionY(rand() % 180)
 {
-    this->nombre = nombre;
-    this->aphelion = aphelion;
-    this->ubicacionActualEje = 0;
-    this->perihelion = perihelion;
-    this->periodoOrbital = periodoOrbital;
-    this->texturePath = texturePath;
-    this->tamano = tamano;
-    this->sateliteDe = sateliteDe;
-    this->inclinacionZ = inclinacion;
-    this->inclinacionY = rand() % 180;
+
 }
 
 Planeta::~Planeta() {
     delete textura;
+    delete sateliteDe;
 }
 
 void Planeta::Orbita(double grado, double escalaRotacionEje)
