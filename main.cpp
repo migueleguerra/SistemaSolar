@@ -106,7 +106,7 @@ void rWin(int w, int h)
     glViewport(0, 0, w, h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(40.0, w/h, 1.0, 1500.0);
+    gluPerspective(60.0, (GLfloat) w/(GLfloat) h, 1.0, 1500.0);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
 }
