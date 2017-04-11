@@ -57,14 +57,14 @@ void initPlanetas()
     - aphelion y perihelion es que tan cerca esta orbitando del sol
     - *sateliteDe seria la luna y especificando a quien pertenece.
     */
-    int scale = 6;
+    int scale = 20;
 
     // rotation to 1 day o earth
     // mercurio 0.24
     // venus 0.0041
     // marte 1
     // https://nssdc.gsfc.nasa.gov/planetary/factsheet/planet_table_ratio.html
-    planetas->Add(new Planeta("Sol", 0, 0, 0, 20,"texturas/2k_sun.jpg", 109/30, 1.0));
+    planetas->Add(new Planeta("Sol", 0, 0, 0, 20,"texturas/2k_sun.jpg", 109/20., 1.0));
     planetas->Add(new Planeta("Mercurio", 7.0*scale, 4.6*scale, 0.24, 58.82, "texturas/2k_mercury.jpg", .38, 1.0));
     planetas->Add(new Planeta("Venus", 10.893*scale, 10.747*scale, 0.61, 243, "texturas/2k_venus_atmosphere.jpg", .815, 1.0));
     planetas->Add(new Planeta("Tierra", 15.19*scale, 14.95*scale, 4.15, 1, "texturas/Tierra.jpg", 1, 25.0));
@@ -232,7 +232,7 @@ void initSistema()
     
     initPlanetas();
     menu(0);
-    universo = new Universo("texturas/2k_stars+milky_way.jpg", 610);
+    universo = new Universo("texturas/2k_stars+milky_way.jpg", 1200);
     // agregarTextura();
     glutReshapeFunc(rWin);
     glutDisplayFunc(dibujar);

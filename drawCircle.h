@@ -3,7 +3,7 @@
 
 void drawCircle(float x2){
     // usamos esta en lugar de bresenham pues necesitamos precisión flotante
-    int detail=100;
+    int detail=180;
 
     glPushMatrix();
     glScaled(x2, x2, x2);
