@@ -14,10 +14,11 @@ $ git clone https://github.com/Guetop/SistemaSolar.git
 
 ### Prerequisites
 
-We need the following sets of libraries:
+You need the following sets of libraries and programs in your local computer:
 
 - [OpenGL](https://www.khronos.org/opengl/wiki/Getting_Started)
 - [GLUT](https://www.opengl.org/resources/libraries/glut/)
+- [GIT](https://git-scm.com/)
 
 ### Running
 
