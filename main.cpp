@@ -2,7 +2,7 @@
 //  main.cpp
 //  Projecto
 //
-//  Created by Miguel Enrique Guerra Topete on 01/04/17.
+//  Created by Miguel Enrique Guerra Topete & Ivan Yossi on 01/04/17.
 //  Copyright © 2017 Miguel Enrique Guerra Topete. All rights reserved.
 //
 
