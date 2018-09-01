@@ -40,6 +40,10 @@ $ ./solarSis
 
 ### Example
 
+<a href="https://imgflip.com/gif/2gztoy"><img src="https://i.imgflip.com/2gztoy.gif" title="made at imgflip.com"/></a>
+
+<a href="https://imgflip.com/gif/2gztro"><img src="https://i.imgflip.com/2gztro.gif" title="made at imgflip.com"/></a>
+
 ## Built With
 
 - [OpenGL](https://www.opengl.org/) - 3D graphics
