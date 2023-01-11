@@ -1,0 +1,40 @@
+LÉAME.md
+Sistema solar
+Este proyecto es una simulación simple del Sistema Solar escrita en C++ y la biblioteca de código abierto OpenGL para gráficos 3D. Escribimos funcionalidades básicas para el programa como manipulación de cámara, fuente de iluminación e integración de texturas. La simulación del Sistema Solar consta de los 8 planetas, el sol y Plutón.
+
+Cabe mencionar que el presente trabajo se limita a simular el movimiento planetario básico del Sistema Solar, y que este ejercicio no utiliza una simulación elíptica precisa ni el movimiento real de cada uno de los planetas (basado en ecuaciones estelares u otras). Queda como trabajo futuro implementarlo en el proyecto.
+
+Empezando
+Descargue haciendo clic en el botón de descarga o clone el repertorio de Github usando el siguiente comando:
+
+$ git clone https://github.com/Guetop/SistemaSolar.git
+requisitos previos
+Necesita los siguientes conjuntos de bibliotecas y programas en su computadora local:
+
+OpenGL
+EXCESO
+GIT
+Corriendo
+Una serie de ejemplos paso a paso que le indican cómo poner en marcha un entorno de desarrollo
+
+Navegue hasta la carpeta y ejecute el siguiente comando para crear el archivo de ejecución (este comando funciona para OSX y LINUX, es posible que no funcione para Windows):
+
+$ make
+Puede mostrar algunos mensajes de advertencia de funciones obsoletas.
+
+Ejecuta el programa:
+
+$ ./solarSis
+Ejemplo
+68747470733a2f2f692e696d67666c69702e636f6d2f32677a746f792e676966
+
+
+68747470733a2f2f692e696d67666c69702e636f6d2f32677a74726f2e676966
+
+
+construido con
+OpenGL - Gráficos 3D
+GLUT : brinda soporte para interactuar con el sistema operativo y los modelos de construcción.
+Autores
+Miguel Guerra - Obra inicial
+Ivan SantaMaria - Trabajo inicial
